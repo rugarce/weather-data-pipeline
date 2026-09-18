@@ -70,7 +70,8 @@ weather-data-pipeline/
 │   └── test_pipeline.py
 │
 ├── sql/
-│   └── 001_create_tables.sql
+│   ├── 001_create_tables.sql
+│   └── 002_analysis_queries.sql
 │
 ├── .github/
 │   └── workflows/
@@ -250,7 +251,7 @@ This project demonstrates:
 - Idempotent pipelines
 - Docker
 - Automated testing
-- CI/CD fundamentals
+- Continuous Integration (CI)
 - Git and GitHub workflow
 
 ## Future Improvements
@@ -263,7 +264,6 @@ Possible next steps:
 - Add historical weather ingestion
 - Add data quality metrics
 - Add scheduled execution
-- Add analytical SQL queries
 - Add a dashboard using Power BI or another BI tool
 - Deploy the pipeline to a cloud environment
 
