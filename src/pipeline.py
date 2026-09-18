@@ -4,6 +4,7 @@ from src.config import CITIES
 from src.database import (
     get_connection,
     get_or_create_location,
+    save_raw_weather,
     save_observations,
 )
 
@@ -27,6 +28,7 @@ def transform_weather(data: dict) -> list[dict]:
         )
 
     return observations
+
 
 def validate_observations(observations: list[dict]) -> None:
     for obs in observations:
@@ -60,6 +62,7 @@ def run_pipeline() -> None:
             validate_observations(observations)
 
             location_id = get_or_create_location(conn, city)
+            save_raw_weather(conn, location_id, data)
 
             save_observations(
                 conn,
